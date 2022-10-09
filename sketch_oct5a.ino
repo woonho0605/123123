@@ -36,9 +36,9 @@ void loop() {
     return;
 
   distance = USS_measure(PIN_TRIG, PIN_ECHO); 
-  if (100 < distance <= 200 ) {
+  if (100 < distance && distance <= 200 ) {
     analogWrite(PIN_LED,int(2.55*(200 - distance)));
-  }else if(200 < distance < 300) {
+  }else if(200 < distance && distance < 300) {
     analogWrite(PIN_LED, int(2.55*(distance - 200))); 
   } if (distance <= _DIST_MIN) {    
     distance = _DIST_MIN - 10.0;
