@@ -74,7 +74,7 @@ void loop() {
   }
 
   // Apply ema filter here  
-  dist_ema = _EMA_ALPHA * dist_raw (1-_EMA_ALPHA) * dist_ema
+  dist_ema = _EMA_ALPHA * dist_raw + (1-_EMA_ALPHA) * dist_ema;
   if(dist_ema <= _TARGET_LOW){
     myservo.writeMicroseconds(_DUTY_MIN); //500
     delay(50);
